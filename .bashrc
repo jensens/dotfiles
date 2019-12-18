@@ -5,9 +5,25 @@
 #     source ~/.dotfiles/bashrc
 # fi
 
+# history search constrain to already typed
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+ 
+# Compiler Optimization to recommended level 
+export CFLAGS="-O2"
+export CXXFLAGS="-O2"
+
+
 # load custom aliases
 if [ -f ~/.dotfiles/.bash_aliases ]; then
     . ~/.dotfiles/.bash_aliases
+fi
+
+# git prompt 
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    GIT_PROMPT_ONLY_IN_REPO=0
+    GIT_PROMPT_THEME=Slim-dark
+    source ~/.bash-git-prompt/gitprompt.sh
 fi
 
 # PYENV
