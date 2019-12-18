@@ -1,0 +1,46 @@
+[user]
+    email = jk@kleinundpartner.at
+    name = Jens W. Klein
+
+[alias]
+    ai = add -i
+    ap = add -p
+    b = branch
+    cf = config
+    ci = commit -v
+    cia = commit -v -a
+    cd = commit -v --amend
+    cad = commit -v -a --amend
+    cam = commit -a -m
+    co = checkout
+    cb = checkout -b 
+    cp = cherry-pick -x
+    d = diff
+    dc = diff --cached
+    dw = diff --color-words
+    dwc = diff --cached --color-words
+    lf = log --follow
+    llf = log -p --follow
+    l = log
+    ll = log -p
+    lt = log trunk..
+    llt = log -p trunk..
+    lm = log master..
+    llm = log -p master..
+    pr = pull --rebase --autostash
+    resh1 = reset HEAD^
+    rbi = rebase --interactive
+    rbc = rebase --continue
+    rbs = rebase --skip
+    rba = rebase --abort
+    rb = rebase
+    s = !git --no-pager status
+    sm = submodule
+    s = stash
+    sp = stash pop
+    st = status
+    tl = tag -l
+    tp = !git tag $1 && git push --tags && :
+
+[credential]
+	helper = store
