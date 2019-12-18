@@ -1,0 +1,4 @@
+.buildout/extends-cache
+.buildout/downloads
+.buildout/shared-eggs
+.vscode
