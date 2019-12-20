@@ -4,10 +4,10 @@
 
 # Initial Screenlayout
 exec /home/jensens/.screenlayout/dpi.sh
-exec_always /home/jensens/.screenlayout/single.sh
+#exec /home/jensens/.screenlayout/single.sh
 
 # bind key for office mode
-bindsym $mod+Ctrl+s exec /home/jensens/.screenlayout/single.sh
+bindsym $mod+Ctrl+i exec /home/jensens/.screenlayout/single.sh
 bindsym $mod+Ctrl+o exec /home/jensens/.screenlayout/office.sh
 
 
@@ -91,10 +91,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
 
 # move windows in workspaces
 bindsym $mod+Shift+Left move left
@@ -102,10 +102,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
 
 # move workspace to other monitor
 bindsym $mod+Ctrl+Left move workspace to output left
@@ -138,6 +138,11 @@ bindsym XF86MonBrightnessDown exec "sudo /usr/bin/brightnessctl s 5%-"
 bindsym Ctrl+XF86MonBrightnessUp   exec "sudo /usr/bin/brightnessctl -d tpacpi::kbd_backlight s +1"
 bindsym Ctrl+XF86MonBrightnessDown exec "sudo /usr/bin/brightnessctl -d tpacpi::kbd_backlight s 1-"
 
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+bindsym $mod+Ctrl+t layout tabbed 
+bindsym $mod+Ctrl+y layout toggle split
+
 # move to workspace
 bindsym $mod+1 workspace $wsterm
 bindsym $mod+2 workspace $wsweb
@@ -148,7 +153,7 @@ bindsym $mod+6 workspace $wsfile
 bindsym $mod+7 workspace $wsoffice
 bindsym $mod+8 workspace $wsmedia
 bindsym $mod+9 workspace $wssec
-bindsym $mod+0 workspace $wsmisc
+bindsym $mod+0 workspace $ws10
 bindsym $mod+Ctrl+1 workspace $ws11
 bindsym $mod+Ctrl+2 workspace $ws12
 bindsym $mod+Ctrl+3 workspace $ws13
@@ -334,6 +339,7 @@ set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.u
 set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
+font "pango:Hack Regular 8, FontAwesome 8"
 set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
 
 # Configure the bar
@@ -391,8 +397,7 @@ assign [class="^Mate-terminal$"] → $wsterm
 # CHAT
 assign [class="^Gajim$"] → $wschat
 assign [class="^Skype$"] → $wschat
-assign [class="^skypeonchrome$"] → $wschat
-assign [class="^gitteronchrome$"] → $wschat
+assign [class="^Gitter$"] → $wschat
 assign [class="^discord$"] → $wschat
 
 # FILE
@@ -413,16 +418,20 @@ assign [class="^*potify$"] → $wsmedia
 assign [class="^.*eepassx.*$"] → $wssec
 assign [class="^.*ibreoffice.*$"] → $wsoffice
 
+
 ###########
 # autostart
 exec --no-startup-id i3-msg 'workspace $wsterm; exec /usr/bin/mate-terminal'
-exec --no-startup-id i3-msg 'workspace $wsweb; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace $wsweb; exec /usr/bin/firefox -new-instance -p default'
 exec --no-startup-id i3-msg 'workspace $wsdev; exec /usr/bin/code'
 exec --no-startup-id i3-msg 'workspace $wsfile; exec /usr/bin/nautilus'
 exec --no-startup-id i3-msg 'workspace $wsmail; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace $wssec; exec /usr/bin/keepassxc /home/jensens/SparkleShare/git.bluedynamics.eu/dokumente/F.UNTERNEHMEN/PW/jensens.kdbx'
-exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/hexchat'
-exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/share/discord/Discord'
-exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/google-chrome --new-window --app=https://web.skype.com/?source=extension --class="skypeonchrome"'
-exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/google-chrome --new-window --app=https://gitter.im/ --class="gitteronchrome"'
 exec --no-startup-id i3-msg 'workspace $wsmedia; exec /usr/bin/pavucontrol'
+
+# chat layouted
+exec --no-startup-id i3-msg 'workspace "$wschat"; append_layout /home/jensens/.dotfiles/ws5chat.json'
+exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/google-chrome --new-window --app=https://web.skype.com/?source=extension --class="Skype"'
+exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/firefox -new-instance -P "Gitter" --class="Gitter" -new-window https://gitter.im/'
+exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/hexchat'
+#exec --no-startup-id i3-msg 'workspace $wschat; exec /snap/bin/discord'

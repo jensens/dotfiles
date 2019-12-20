@@ -101,7 +101,7 @@ i3xrocks.value.color:	#D8DEE9
 i3xrocks.value.font:	Source Code Pro Medium 11
 i3xrocks.warning:	#EBCB8B
 rofi.drun-icon-theme:	Arc
-rofi.font:	Source Code Pro Medium 11
+rofi.font:	Source Code Pro Medium 14
 rofi.fullscreen:	true
 rofi.show-icons:	true
 rofi.theme:	/etc/regolith/rofi/regolith-theme.rasi

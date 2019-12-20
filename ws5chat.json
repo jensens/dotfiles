@@ -1,0 +1,96 @@
+{
+	"border": "pixel",
+	"floating": "auto_off",
+	"layout": "splitv",
+	"percent": 0.5,
+	"type": "con",
+	"nodes": [
+
+		{
+			"border": "pixel",
+			"floating": "auto_off",
+			"layout": "splith",
+			"percent": 0.5,
+			"type": "con",
+			"nodes": [
+            {
+					"border": "pixel",
+					"current_border_width": 3,
+					"floating": "auto_off",
+					"geometry": {
+						"height": 1368,
+						"width": 1260,
+						"x": 1288,
+						"y": 12
+					},
+					"name": "plone/public - Gitter",
+					"percent": 0.5,
+					"swallows": [{
+						"class": "^Gitter$"
+					}],
+					"type": "con"
+				},
+				{
+					"border": "pixel",
+					"current_border_width": 2,
+					"floating": "auto_off",
+					"geometry": {
+						"height": 2956,
+						"width": 2668,
+						"x": 2696,
+						"y": 12
+					},
+					"name": "Skype",
+					"percent": 0.5,
+					"swallows": [{
+						"class": "^Skype$"
+					}],
+					"type": "con"
+				}
+			]
+		},
+
+		{
+			"border": "pixel",
+			"floating": "auto_off",
+			"layout": "splith",
+			"percent": 0.5,
+			"type": "con",
+			"nodes": [{
+					"border": "pixel",
+					"current_border_width": 2,
+					"floating": "auto_off",
+					"geometry": {
+						"height": 980,
+						"width": 5352,
+						"x": 10,
+						"y": 998
+					},
+					"name": "jensens @ Ubuntu Servers (freenode) / #plone - HexChat",
+					"percent": 0.5,
+					"swallows": [{
+						"class": "^Hexchat$"
+					}],
+					"type": "con"
+				},
+				{
+					"border": "pixel",
+					"current_border_width": 2,
+					"floating": "auto_off",
+					"geometry": {
+						"height": 1472,
+						"width": 2669,
+						"x": 0,
+						"y": 0
+					},
+					"name": "#rudel-chat - Discord",
+					"percent": 0.5,
+					"swallows": [{
+						"class": "^discord$"
+					}],
+					"type": "con"
+				}
+			]
+		}
+   ]
+}
