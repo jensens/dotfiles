@@ -1,0 +1,70 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2090,
+       "width": 756,
+       "x": 1542,
+       "y": 12
+    },
+    "name": "Skype",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+       // "class": "^Google\\-chrome$",
+       // "instance": "^web\\.skype\\.com$",
+       // "title": "^Skype$",
+       // "window_role": "^pop\\-up$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2114,
+       "width": 3840,
+       "x": 0,
+       "y": 0
+    },
+    "name": "WhatsApp - Mozilla Firefox",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+       // "class": "^Firefox$",
+       // "instance": "^Navigator$",
+       // "title": "^WhatsApp\\ \\-\\ Mozilla\\ Firefox$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2088,
+       "width": 752,
+       "x": 2312,
+       "y": 12
+    },
+    "name": "plone/public - Gitter",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+       // "class": "^Google\\-chrome$",
+       // "instance": "^gitter\\.im$",
+       // "title": "^plone\\/public\\ \\-\\ Gitter$",
+       // "window_role": "^pop\\-up$"
+       }
+    ],
+    "type": "con"
+}
+

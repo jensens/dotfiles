@@ -17,7 +17,7 @@ set $hdmi1 HDMI-1
 set $hdmi2 HDMI-2
 set $dp1 DP-1
 set $dp2 DP-2
-set $samsung DP-2
+set $samsung DP-2O
 
 # This defines which key super maps to on your keyboard.  
 # Alt key is Mod1, and Windows key is Mod4
@@ -339,7 +339,7 @@ set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.u
 set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
-font "pango:Hack Regular 8, FontAwesome 8"
+font "pango:Hack Regular 13, FontAwesome 8"
 set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
 
 # Configure the bar
