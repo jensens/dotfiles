@@ -15,9 +15,9 @@ bindsym $mod+Ctrl+o exec /home/jensens/.screenlayout/office.sh
 set $thinkpad eDP-1
 set $hdmi1 HDMI-1
 set $hdmi2 HDMI-2
-set $samsung HDMI-2
 set $dp1 DP-1
 set $dp2 DP-2
+set $samsung DP-2
 
 # This defines which key super maps to on your keyboard.  
 # Alt key is Mod1, and Windows key is Mod4
