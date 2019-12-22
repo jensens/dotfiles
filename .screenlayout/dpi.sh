@@ -1,2 +1,3 @@
 #!/bin/sh
-xrandr --dpi 210/eDP-1 --dpi 157/HDMI-2
+xrandr --dpi 210/eDP-1 
+xrandr --dpi 157/DP-2

@@ -17,7 +17,7 @@ set $hdmi1 HDMI-1
 set $hdmi2 HDMI-2
 set $dp1 DP-1
 set $dp2 DP-2
-set $samsung DP-2O
+set $samsung DP-2
 
 # This defines which key super maps to on your keyboard.  
 # Alt key is Mod1, and Windows key is Mod4
@@ -347,7 +347,7 @@ bar {
   font $i3-wm.bar.font
   separator_symbol " "
   status_command i3xrocks -c $i3xrocks_config
-  tray_output none
+  tray_output primary
   strip_workspace_numbers yes
 
   colors {
@@ -405,6 +405,7 @@ assign [class="^Nautilus$"] → $wsfile
 assign [class="^Nemo$"] → $wsfile
 assign [class="^Krusader$"] → $wsfile
 assign [class="^Caja$"] → $wsfile
+assign [class="^Sparkle$"] → $wsfile
 
 # MEDIA
 assign [class="^banshee$"] → $wsmedia
@@ -425,6 +426,7 @@ exec --no-startup-id i3-msg 'workspace $wsterm; exec /usr/bin/mate-terminal'
 exec --no-startup-id i3-msg 'workspace $wsweb; exec /usr/bin/firefox -new-instance -p default'
 exec --no-startup-id i3-msg 'workspace $wsdev; exec /usr/bin/code'
 exec --no-startup-id i3-msg 'workspace $wsfile; exec /usr/bin/nautilus'
+exec --no-startup-id i3-msg 'workspace $wsfile; exec /usr/bin/sparkleshare'
 exec --no-startup-id i3-msg 'workspace $wsmail; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace $wssec; exec /usr/bin/keepassxc /home/jensens/SparkleShare/git.bluedynamics.eu/dokumente/F.UNTERNEHMEN/PW/jensens.kdbx'
 exec --no-startup-id i3-msg 'workspace $wsmedia; exec /usr/bin/pavucontrol'
