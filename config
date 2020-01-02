@@ -19,7 +19,7 @@ set $dp1 DP-1
 set $dp2 DP-2
 set $samsung DP-2
 
-# This defines which key super maps to on your keyboard.  
+# This defines which key super maps to on your keyboard.
 # Alt key is Mod1, and Windows key is Mod4
 set $mod Mod4
 set $alt Mod1
@@ -66,7 +66,7 @@ workspace "$wsfile"   output $thinkpad
 workspace "$wsoffice" output $samsung $thinkpad
 workspace "$wsmedia"  output $thinkpad
 workspace "$wssec"    output $thinkpad
-   
+
 # Use  Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -140,7 +140,7 @@ bindsym Ctrl+XF86MonBrightnessDown exec "sudo /usr/bin/brightnessctl -d tpacpi::
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
-bindsym $mod+Ctrl+t layout tabbed 
+bindsym $mod+Ctrl+t layout tabbed
 bindsym $mod+Ctrl+y layout toggle split
 
 # move to workspace
@@ -190,7 +190,7 @@ bindsym $mod+Shift+Ctrl+8 move container to workspace $ws18
 bindsym $mod+Shift+Ctrl+9 move container to workspace $ws19
 
 # move focused container to workspace, move to workspace
-bindsym $mod+$alt+1 move container to workspace $wsterm; workspace $wsterm  
+bindsym $mod+$alt+1 move container to workspace $wsterm; workspace $wsterm
 bindsym $mod+$alt+2 move container to workspace $wsweb; workspace $wsweb
 bindsym $mod+$alt+3 move container to workspace $wsdev; workspace $wsdev
 bindsym $mod+$alt+4 move container to workspace $wsmail; workspace $wsmail
@@ -291,7 +291,7 @@ set_from_resource $focused_inactive.color.border i3-wm.client.focused_inactive.c
 set_from_resource $focused_inactive.color.background i3-wm.client.focused_inactive.color.background "#073642"
 set_from_resource $focused_inactive.color.text i3-wm.client.focused_inactive.color.text "#839496"
 set_from_resource $focused_inactive.color.indicator i3-wm.client.focused_inactive.color.indicator "#073642"
-set_from_resource $focused_inactive.color.child_border i3-wm.client.focused_inactive.color.child_border 
+set_from_resource $focused_inactive.color.child_border i3-wm.client.focused_inactive.color.child_border
 
 set_from_resource $unfocused.color.border i3-wm.client.unfocused.color.border "#002b36"
 set_from_resource $unfocused.color.background i3-wm.client.unfocused.color.background "#073642"
@@ -433,7 +433,6 @@ exec --no-startup-id i3-msg 'workspace $wsmedia; exec /usr/bin/pavucontrol'
 
 # chat layouted
 exec --no-startup-id i3-msg 'workspace "$wschat"; append_layout /home/jensens/.dotfiles/ws5chat.json'
-exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/google-chrome --new-window --app=https://web.skype.com/?source=extension --class="Skype"'
-exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/firefox -new-instance -P "Gitter" --class="Gitter" -new-window https://gitter.im/'
+exec --no-startup-id i3-msg 'workspace $wschat; exec /snap/bin/skype'
 exec --no-startup-id i3-msg 'workspace $wschat; exec /usr/bin/hexchat'
 #exec --no-startup-id i3-msg 'workspace $wschat; exec /snap/bin/discord'
