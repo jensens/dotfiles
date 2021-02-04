@@ -36,15 +36,15 @@ set $terminal_path /usr/bin/mate-terminal
 
 # Color values are defined in ~/.Xresources-regolith
 # These are the labels which define each i3 workspace.
-set_from_resource $wsterm   i3-wm.workspace.01.name "1:Term"
-set_from_resource $wsweb    i3-wm.workspace.02.name "2:Web"
-set_from_resource $wsdev    i3-wm.workspace.03.name "3:Dev"
-set_from_resource $wsmail   i3-wm.workspace.04.name "4:Mail"
-set_from_resource $wschat   i3-wm.workspace.05.name "5:Chat"
-set_from_resource $wsfile   i3-wm.workspace.06.name "6:Files"
-set_from_resource $wsoffice i3-wm.workspace.07.name "7:Office"
-set_from_resource $wsmedia  i3-wm.workspace.08.name "8:Media"
-set_from_resource $wssec    i3-wm.workspace.09.name "9:Sec"
+set_from_resource $wsterm   i3-wm.workspace.01.name "1"
+set_from_resource $wsweb    i3-wm.workspace.02.name "2"
+set_from_resource $wsdev    i3-wm.workspace.03.name "3"
+set_from_resource $wsmail   i3-wm.workspace.04.name "4"
+set_from_resource $wschat   i3-wm.workspace.05.name "5"
+set_from_resource $wsfile   i3-wm.workspace.06.name "6"
+set_from_resource $wsoffice i3-wm.workspace.07.name "7"
+set_from_resource $wsmedia  i3-wm.workspace.08.name "8"
+set_from_resource $wssec    i3-wm.workspace.09.name "9"
 set_from_resource $ws10     i3-wm.workspace.10.name "10"
 set_from_resource $ws11     i3-wm.workspace.11.name "11"
 set_from_resource $ws12     i3-wm.workspace.12.name "12"
@@ -137,6 +137,9 @@ bindsym XF86MonBrightnessUp   exec "sudo /usr/bin/brightnessctl s +5%"
 bindsym XF86MonBrightnessDown exec "sudo /usr/bin/brightnessctl s 5%-"
 bindsym Ctrl+XF86MonBrightnessUp   exec "sudo /usr/bin/brightnessctl -d tpacpi::kbd_backlight s +1"
 bindsym Ctrl+XF86MonBrightnessDown exec "sudo /usr/bin/brightnessctl -d tpacpi::kbd_backlight s 1-"
+
+# screenshot
+bindsym $mod+Print "exec /usr/bin/mate-screenshot -i"
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -235,10 +238,12 @@ bindsym $mod+Shift+s exec systemctl suspend
 bindsym $mod+c exec gnome-control-center
 bindsym $mod+w exec gnome-control-center wifi
 bindsym $mod+b exec gnome-control-center bluetooth
-bindsym $mod+d exec gnome-control-center display
+#bindsym $mod+d exec gnome-control-center display
+bindsym $mod+d exec arandr
 bindsym $mod+n exec gnome-control-center network
 bindsym $mod+p exec gnome-control-center power
-bindsym $mod+s exec gnome-control-center sound
+#bindsym $mod+s exec gnome-control-center sound
+bindsym $mod+s exec /usr/bin/pavucontrol
 
 # resize window (you can also use the mouse for that)
 mode "Resize Mode" {
@@ -283,6 +288,7 @@ smart_gaps on
 
 set_from_resource $focused.color.border i3-wm.client.focused.color.border "#002b36"
 set_from_resource $focused.color.background i3-wm.client.focused.color.background "#586e75"
+set_from_resource $focused.color.text i3-wm.client.focused.color.text "#fdf6e3"
 set_from_resource $focused.color.text i3-wm.client.focused.color.text "#fdf6e3"
 set_from_resource $focused.color.indicator i3-wm.client.focused.color.indicator "#268bd2"
 set_from_resource $focused.color.child_border i3-wm.client.focused.color.child_border
@@ -347,7 +353,8 @@ bar {
   font $i3-wm.bar.font
   separator_symbol " "
   status_command i3xrocks -c $i3xrocks_config
-  tray_output primary
+  tray_output thinkpad
+  position top
   strip_workspace_numbers yes
 
   colors {
@@ -420,14 +427,13 @@ assign [class="^.*eepassx.*$"] → $wssec
 assign [class="^.*ibreoffice.*$"] → $wsoffice
 
 
-###########
+###########e
 # autostart
 exec --no-startup-id i3-msg 'workspace $wsterm; exec /usr/bin/mate-terminal'
 exec --no-startup-id i3-msg 'workspace $wsweb; exec /usr/bin/firefox -new-instance -p default'
 exec --no-startup-id i3-msg 'workspace $wsdev; exec /usr/bin/code'
 exec --no-startup-id i3-msg 'workspace $wsfile; exec /usr/bin/nautilus'
 exec --no-startup-id i3-msg 'workspace $wsfile; exec /usr/bin/sparkleshare'
-exec --no-startup-id i3-msg 'workspace $wsmail; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace $wssec; exec /usr/bin/keepassxc /home/jensens/SparkleShare/git.bluedynamics.eu/dokumente/F.UNTERNEHMEN/PW/jensens.kdbx'
 exec --no-startup-id i3-msg 'workspace $wsmedia; exec /usr/bin/pavucontrol'
 

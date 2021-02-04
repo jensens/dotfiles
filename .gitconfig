@@ -39,8 +39,12 @@
     s = stash
     sp = stash pop
     st = status
-    tl = tag -l
+    tags = tag -l	 
     tp = !git tag $1 && git push --tags && :
 
 [credential]
 	helper = store
+[diff]
+	noprefix = true
+[core]
+	excludesfile = /home/jensens/.gitignore
