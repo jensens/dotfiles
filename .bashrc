@@ -1,8 +1,8 @@
 # additional to the default bashrc
 
 # load like so in ~/.bashrc :
-# if [ -f ~/.dotfiles/bashrc ]; then
-#     source ~/.dotfiles/bashrc
+# if [ -f ~/.dotfiles/.bashrc ]; then
+#     source ~/.dotfiles/.bashrc
 # fi
 
 # history search constrain to already typed
@@ -27,7 +27,7 @@ if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
 fi
 
 # GO
-export PATH="/home/jensens/go/bin:$PATH"
+# export PATH="/home/jensens/go/bin:$PATH"
 
 # PYENV
 export PATH="/home/jensens/.pyenv/bin:$PATH"
@@ -38,5 +38,6 @@ eval "$(pyenv virtualenv-init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 #
 export PATH="./node_modules/.bin:$PATH"

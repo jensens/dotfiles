@@ -1,2 +1,0 @@
-#!/bin/bash
-find . -name "*.py"|while read fn;do head -n1 "$fn"|grep -qv "^# \-\*\- coding" && sed -i "1i # -*- coding: utf-8 -*-" $fn;done
